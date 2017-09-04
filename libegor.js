@@ -1,4 +1,4 @@
-/* libegor v1.2 | Copyright 2017 libegor.ru/js | http://www.apache.org/licenses/LICENSE-2.0 */
+/* libegor v1.2 | Copyright 2017 libegor.ru | http://www.apache.org/licenses/LICENSE-2.0 */
 var libegor = {
     Class: {},
     moveparam: function (a, b) {
