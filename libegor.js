@@ -1,4 +1,4 @@
-/* libegor v1.1 | Copyright 2017 libegor.ru/js | http://www.apache.org/licenses/LICENSE-2.0 */
+/* libegor v1.2 | Copyright 2017 libegor.ru/js | http://www.apache.org/licenses/LICENSE-2.0 */
 var libegor = {
     Class: {},
     moveparam: function (a, b) {
@@ -16,17 +16,17 @@ var libegor = {
     },
     add: function () {
         if (arguments.length == 0) return 0;
-		/* libegor.add('br') */
+        /* .libegor.add('br') */
         else if (arguments.length == 1) {var parent = this; var type = arguments[0];}
-		/* libegor.add(table, 'tr') */
+        /* .libegor.add(table, 'tr') */
         else if (arguments.length == 2 && typeof arguments[0] == 'object') {var parent = arguments[0]; var type = arguments[1];}
-		/* libegor.add('input', {type: 'text', value: 'hello world'}) */
+        /* .libegor.add('input', {type: 'text', value: 'hello world'}) */
         else if (arguments.length == 2 && typeof arguments[0] != 'object' && typeof arguments[1] == 'object') {var parent = this; var type = arguments[0]; var param = arguments[1];}
-		/* libegor.add('row_1', 'tr') */
+        /* .libegor.add('row_1', 'tr') */
         else if (arguments.length == 2) {var parent = this; var id = arguments[0]; var type = arguments[1];}
-		/* libegor.add(td_1, 'input', {type: 'text', value: 'hello world'}) */
+        /* .libegor.add(td_1, 'input', {type: 'text', value: 'hello world'}) */
         else if (arguments.length == 3 && typeof arguments[0] == 'object') {var parent = arguments[0]; var type = arguments[1]; var param = arguments[2];}
-		/* libegor.add('td_1', 'tr', {class: 'row'}) */
+        /* .libegor.add('td_1', 'tr', {class: 'row'}) */
         else if (arguments.length == 3) {var parent = this; var id = arguments[0]; var type = arguments[1]; var param = arguments[2];}
 
 
@@ -43,6 +43,7 @@ var libegor = {
 
         obj.set = function (att, value) {
             this.setAttribute(att, value);
+            return this;
         }
         obj.get = function (att) {
             return this.getAttribute(att);
@@ -52,6 +53,7 @@ var libegor = {
         }
         obj.rem = function (att) {
             this.removeAttribute(att);
+            return this;
         }
         obj.push = function (obj) {
             var i = 0;
@@ -68,9 +70,11 @@ var libegor = {
 
         obj.addClass = function (c) {
             if(libegor.isset(this.classList)) this.classList.add(c);
+            return this;
         }/* addClass */
         obj.delClass = function (c) {
             if(libegor.isset(this.classList)) this.classList.remove(c);
+            return this;
         }/* delClass */
         obj.ifClass = function (c) {
             if (!libegor.isset(this.classList)) return false;
@@ -79,10 +83,12 @@ var libegor = {
 
         obj.hide = function () {
             if(libegor.isset(this.classList)) this.addClass('hidden');
+            return this;
         }/* hide */
 
         obj.show = function () {
             if(libegor.isset(obj.classList)) this.delClass('hidden');
+            return this;
         }/* show */
 
         obj.del = function () {
@@ -100,7 +106,7 @@ var libegor = {
 
             for (var key in param){
                 if(key == 'base' || key == 'baseAfter' || key == 'before' || key == 'replace' || key == 'after' || key == 'reconstruct' || key == 'svg' || key == 'push' || key == 'style') {
-					/* пропуск параметров */
+                    /* пропуск параметров */
                     if (key == 'svg' && typeof param[key] == 'object') {
                         obj[key] = param[key];
                         obj.draw = libegor.svg.draw;
@@ -223,4 +229,4 @@ var libegor = {
 
         return ret;
     }/* searchArrayInArray */
-};/* libegor */
+};/* .libegor */
