@@ -31,8 +31,6 @@ var CLASS_CLOCK = function () {
 	this.add('minute_hand', 'div', {class: 'hand minute'});
 	this.add('second_hand', 'div', {class: 'hand second'});
 	
-	this.add('clock_face','div', {class: 'face'});
-	
 	
 	this.construct = function () {
 		var date = new Date();
