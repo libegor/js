@@ -77,13 +77,13 @@ libegor.add(div_clock.parentNode, 'div', {class: 'clock', base: CLASS_CLOCK, rep
 ``` css
 .clock {
 	width: 300px;
-    height: 300px;
-    background: antiquewhite;
-    border-radius: 100%;
-    overflow: hidden;
+	height: 300px;
+	background: antiquewhite;
+	border-radius: 100%;
+	overflow: hidden;
 	position: relative;
 	-webkit-transition: background 2s ease;
-    transition: background 2s ease;
+	transition: background 2s ease;
 }
 .clock.even {
 	background: black;
@@ -94,7 +94,7 @@ libegor.add(div_clock.parentNode, 'div', {class: 'clock', base: CLASS_CLOCK, rep
 	position: absolute;
 	left: calc(50% - 2.5px);
 	-webkit-transition: transform 0.5s ease;
-    transition: transform 0.5s ease;
+	transition: transform 0.5s ease;
 }
 .clock > .hand:before {
 	content: '';
@@ -104,28 +104,27 @@ libegor.add(div_clock.parentNode, 'div', {class: 'clock', base: CLASS_CLOCK, rep
 	background: black;
 	position: relative;
 	-webkit-transition: background 2s ease;
-    transition: background 2s ease;
-    
+	transition: background 2s ease;
 }
 .clock.even > .hand:before {
 	background: white;
 }
 .clock > .hand.hour:before {
 	height: 35%;
-    top: 20%;
+	top: 20%;
 }
 .clock > .hand.minute:before {
 	height: 48%;
-    top: 7%;
+	top: 7%;
 }
 .clock > .hand.hour {
 	-webkit-transition: transform 2s ease;
-    transition: transform 2s ease;
+	transition: transform 2s ease;
 }
 .clock > .hand.second {
-    width: 3px;
+	width: 3px;
 	-webkit-transition: transform 0.1s linear;
-    transition: transform 0.1s linear;
+	transition: transform 0.1s linear;
 }
 .clock > .hand.second:before {
 	top: 3%;
