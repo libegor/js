@@ -58,7 +58,7 @@ var CLASS_CLOCK = function () {
 		this.el.hour_hand.style.transform = 'rotate('+((hour/12 + this.obj.rotate.h)*360)+'deg)';
 		this.el.minute_hand.style.transform = 'rotate('+((minute/60 + this.obj.rotate.m)*360)+'deg)';
 		this.el.second_hand.style.transform = 'rotate('+((second/60 + this.obj.rotate.s)*360)+'deg)';
-	}/* construct */
+	}// construct
 	
 	this.loop = function () {
 		var p = arguments[0] ? arguments[0] : this;
@@ -66,8 +66,8 @@ var CLASS_CLOCK = function () {
 		p.construct();
 		
 		setTimeout(function(){p.loop(p)}, 500); 
-	}/* loop */
-}/* CLASS_CLOCK */
+	}// loop
+}// CLASS_CLOCK
 
 var div_clock = document.getElementById('clock');
 
